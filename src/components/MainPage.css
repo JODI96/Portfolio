@@ -1,0 +1,24 @@
+.main-page {
+  background-color: #0d0d0d;
+  color: #00ffcc;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.main-page h2 {
+  font-size: 3rem;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  margin-bottom: 1rem;
+}
+
+.main-page p {
+  font-size: 1.5rem;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+  line-height: 1.6;
+}

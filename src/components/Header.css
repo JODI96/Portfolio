@@ -1,14 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-body {
-  font-family: 'Orbitron', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #0d0d0d;
-  color: #00ffcc;
-}
-
-header {
+.header {
   background-color: #1a1a1a;
   color: #fff;
   padding: 1rem;
@@ -16,7 +6,16 @@ header {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-nav ul {
+.header-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.header-nav {
+  margin-top: 1rem;
+}
+
+.header-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -24,11 +23,11 @@ nav ul {
   justify-content: center;
 }
 
-nav ul li {
+.header-list-item {
   margin: 0 1rem;
 }
 
-nav ul li a {
+.header-link {
   color: #00ffcc;
   text-decoration: none;
   text-shadow: 0 0 5px #00ffcc;
@@ -36,15 +35,7 @@ nav ul li a {
   transition: color 0.3s, text-shadow 0.3s;
 }
 
-nav ul li a:hover {
+.header-link:hover {
   color: #ff00ff;
   text-shadow: 0 0 5px #ff00ff;
-}
-
-section {
-  padding: 2rem;
-  margin: 2rem;
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
