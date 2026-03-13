@@ -366,6 +366,9 @@ function App() {
               <a href="mailto:joys96@gmail.com" className="contact-link">
                 <span>✉️</span> joys96@gmail.com
               </a>
+              <a href="tel:+41798702865" className="contact-link">
+                <span>📱</span> +41 79 870 28 65
+              </a>
               <a
                 href="https://www.linkedin.com/in/joys-di-giorgio-14698b186"
                 target="_blank"
