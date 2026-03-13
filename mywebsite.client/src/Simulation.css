@@ -70,6 +70,13 @@
 .sim-idle p {
   color: var(--text-secondary);
   font-size: 1rem;
+  max-width: 480px;
+  text-align: center;
+}
+
+.sim-idle-sub {
+  color: var(--text-muted) !important;
+  font-size: 0.85rem !important;
 }
 
 /* ── LOADING ─────────────────────────────────────────────── */

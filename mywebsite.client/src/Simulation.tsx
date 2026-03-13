@@ -101,24 +101,8 @@ export default function Simulation() {
     };
   }, [result]);
 
-  async function runSimulation() {
-    if (!API_URL) {
-      setError('API URL not configured. Set VITE_SIMULATION_API_URL in .env');
-      setStatus('error');
-      return;
-    }
-    setStatus('loading');
-    setError('');
-    try {
-      const res = await fetch(`${API_URL}/simulate`);
-      if (!res.ok) throw new Error(`Server error: ${res.status}`);
-      const data: SimResult = await res.json();
-      setResult(data);
-      setStatus('done');
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Unknown error');
-      setStatus('error');
-    }
+  function runSimulation() {
+    window.open(API_URL, '_blank', 'noopener,noreferrer');
   }
 
   return (
@@ -142,83 +126,14 @@ export default function Simulation() {
         </div>
 
         <div className="sim-card">
-          {status === 'idle' && (
-            <div className="sim-idle">
-              <div className="sim-idle-icon">📈</div>
-              <p>Bereit zum Starten</p>
-              <button className="sim-btn" onClick={runSimulation}>
-                Run Simulation
-              </button>
-            </div>
-          )}
-
-          {status === 'loading' && (
-            <div className="sim-loading">
-              <div className="sim-spinner" />
-              <p>Daten werden geladen und Modell läuft…</p>
-              <span className="sim-loading-sub">Binance API → Feature Engineering → XGBoost → Backtest</span>
-            </div>
-          )}
-
-          {status === 'error' && (
-            <div className="sim-error">
-              <p>⚠️ {error}</p>
-              <button className="sim-btn" onClick={runSimulation}>Erneut versuchen</button>
-            </div>
-          )}
-
-          {status === 'done' && result && (
-            <div className="sim-result">
-              <div className="sim-stats">
-                {Object.entries(STAT_LABELS).map(([key, label]) => (
-                  <div key={key} className="sim-stat">
-                    <span className="sim-stat-label">{label}</span>
-                    <span className={`sim-stat-value ${
-                      key === 'total_return' || key === 'win_rate'
-                        ? (Number(result.stats[key]) >= 0 ? 'positive' : 'negative')
-                        : ''
-                    }`}>
-                      {formatStat(key, result.stats[key])}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div ref={chartRef} className="sim-chart" />
-
-              <div className="sim-trades">
-                <p className="sim-trades-title">Letzte Trades</p>
-                <div className="sim-trades-table-wrap">
-                  <table className="sim-trades-table">
-                    <thead>
-                      <tr>
-                        <th>Zeit</th>
-                        <th>Seite</th>
-                        <th>PnL %</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {result.trades.slice(-15).reverse().map((t, i) => (
-                        <tr key={i} className={t.pnl >= 0 ? 'trade-win' : 'trade-loss'}>
-                          <td>{new Date(t.time * 1000).toLocaleString('de-CH')}</td>
-                          <td>{t.side}</td>
-                          <td className={t.pnl >= 0 ? 'positive' : 'negative'}>
-                            {t.pnl >= 0 ? '+' : ''}{(t.pnl * 100).toFixed(3)}%
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div className="sim-rerun">
-                <button className="sim-btn sim-btn--small" onClick={runSimulation}>
-                  Neu starten
-                </button>
-              </div>
-            </div>
-          )}
+          <div className="sim-idle">
+            <div className="sim-idle-icon">📈</div>
+            <p>Klick auf Run — die Simulation öffnet sich in einem neuen Fenster und startet automatisch.</p>
+            <p className="sim-idle-sub">Beim ersten Start kann es ~30 Sekunden dauern bis der Server aufgewacht ist.</p>
+            <button className="sim-btn" onClick={runSimulation}>
+              Run Simulation ↗
+            </button>
+          </div>
         </div>
       </div>
     </section>
