@@ -1,4 +1,5 @@
 import './App.css';
+import Simulation from './Simulation';
 
 const projects = [
   {
@@ -64,6 +65,7 @@ function App() {
           <li><a href="#experience">Erfahrung</a></li>
           <li><a href="#education">Ausbildung</a></li>
           <li><a href="#projects">Projekte</a></li>
+          <li><a href="#simulation">Simulation</a></li>
           <li><a href="#contact">Kontakt</a></li>
         </ul>
       </nav>
@@ -358,11 +360,13 @@ function App() {
         </div>
       </section>
 
+      <Simulation />
+
       {/* ── CONTACT ─────────────────────── */}
       <section id="contact">
         <div className="container">
           <h2 className="section-title">
-            <span className="section-number">06.</span> Kontakt
+            <span className="section-number">08.</span> Kontakt
           </h2>
           <div className="contact-card">
             <p>
