@@ -2,9 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createChart, ColorType, LineStyle } from 'lightweight-charts';
 import './Simulation.css';
 
-// After deploying to Render, replace with your actual URL:
-// e.g. https://traderxgboost-api.onrender.com
-const API_URL = import.meta.env.VITE_SIMULATION_API_URL ?? '';
+const API_URL = import.meta.env.VITE_SIMULATION_API_URL ?? 'https://traderxgboost.onrender.com';
 
 interface Trade {
   time: number;
