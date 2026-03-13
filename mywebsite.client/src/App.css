@@ -242,6 +242,22 @@ section {
   line-height: 1;
 }
 
+.profile-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+  }
+}
+
 /* ── ABOUT ───────────────────────────────────────────────── */
 .about-grid {
   display: grid;
@@ -256,6 +272,28 @@ section {
 
 .about-text p + p {
   margin-top: 1rem;
+}
+
+.about-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.about-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.interest-tag {
+  background: rgba(227, 179, 65, 0.1);
+  border: 1px solid rgba(227, 179, 65, 0.25);
+  color: var(--yellow);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
 }
 
 .about-stats {
@@ -316,6 +354,40 @@ section {
   letter-spacing: 0.1em;
   color: var(--accent);
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.skill-cat-title--private {
+  color: var(--yellow);
+}
+
+.private-badge {
+  background: rgba(227, 179, 65, 0.12);
+  border: 1px solid rgba(227, 179, 65, 0.3);
+  color: var(--yellow);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.skill-category--private {
+  border-color: rgba(227, 179, 65, 0.2);
+  grid-column: 1 / -1;
+}
+
+.skill-category--private:hover {
+  border-color: var(--yellow);
+}
+
+.skill-tag--private {
+  background: rgba(227, 179, 65, 0.08);
+  border: 1px solid rgba(227, 179, 65, 0.2);
+  color: var(--text-primary);
 }
 
 .skill-tags {

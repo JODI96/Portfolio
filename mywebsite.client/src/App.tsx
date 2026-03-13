@@ -90,10 +90,11 @@ function App() {
               </div>
             </div>
             <div className="hero-photo">
-              <div className="photo-placeholder">
-                <span className="photo-icon">👤</span>
-                <span>Foto folgt</span>
-              </div>
+              <img
+                src="/foto.jpg"
+                alt="Joys Di Giorgio"
+                className="profile-photo"
+              />
             </div>
           </div>
         </div>
@@ -123,6 +124,22 @@ function App() {
                 Nebenbei studiere ich Computer Science an der OST – Ostschweizer Fachhochschule und
                 vertiefe stetig meine Kenntnisse in modernen Technologien.
               </p>
+              <p>
+                Privat beschäftige ich mich intensiv mit <strong>Machine Learning</strong>,{' '}
+                <strong>Datenanalyse</strong> und <strong>Datenvisualisierung</strong>. Konkret habe
+                ich eigenständig Trading-Systeme entwickelt, die Marktdaten in Echtzeit verarbeiten,
+                mit XGBoost und Deep Reinforcement Learning (DQN + LSTM) trainierte Modelle einsetzen
+                und Ergebnisse in interaktiven Dashboards darstellen. Diese Projekte treiben mich an,
+                weil sie Daten, Statistik und Softwareentwicklung in einem vereinen.
+              </p>
+              <div className="about-interests">
+                <span className="interest-tag">Machine Learning</span>
+                <span className="interest-tag">Datenanalyse</span>
+                <span className="interest-tag">Datenvisualisierung</span>
+                <span className="interest-tag">XGBoost</span>
+                <span className="interest-tag">Deep Learning</span>
+                <span className="interest-tag">Finanzmarktdaten</span>
+              </div>
             </div>
             <div className="about-stats">
               <div className="stat-card">
@@ -179,6 +196,17 @@ function App() {
                 <span className="skill-tag lang-tag">Deutsch (Muttersprache)</span>
                 <span className="skill-tag lang-tag">Englisch (Beruflich)</span>
                 <span className="skill-tag lang-tag">Italienisch (Grundkenntnisse)</span>
+              </div>
+            </div>
+            <div className="skill-category skill-category--private">
+              <p className="skill-cat-title skill-cat-title--private">
+                Privat angeeignet
+                <span className="private-badge">Eigeninitiative</span>
+              </p>
+              <div className="skill-tags">
+                {['Python', 'Machine Learning', 'XGBoost', 'PyTorch', 'Deep Learning (DQN / LSTM)', 'Datenanalyse', 'Datenvisualisierung', 'pandas / numpy', 'Finanzmarktdaten', 'WebSocket Streams'].map(s => (
+                  <span key={s} className="skill-tag skill-tag--private">{s}</span>
+                ))}
               </div>
             </div>
           </div>
