@@ -225,13 +225,14 @@ function App() {
 
             <div className="timeline-item">
               <p className="timeline-company">duagon</p>
-              <p className="timeline-role">Junior Software Engineer</p>
+              <p className="timeline-role">Software Engineer</p>
               <p className="timeline-period">September 2024 – heute</p>
               <div className="timeline-desc">
                 <ul>
                   <li>Entwicklung mehrerer .NET-Tools zur Automatisierung von Geschäfts- und Produktionsprozessen</li>
                   <li>Aufbau einer .NET-basierten ETL-Pipeline zur Synchronisierung externer Produktdaten</li>
-                  <li>Erweiterung eines internen Projektmanagementsystems um externe Projekte und Hierarchien</li>
+                  <li>Neuentwicklung eines internen Projektmanagement-Tools mit Drag-and-Drop-Planung, Task-Verwaltung und mehrstufigen Projekthierarchien</li>
+                  <li>Import und Migration von Projektdaten einer Tochterfirma in das neue Hierarchiesystem</li>
                 </ul>
               </div>
             </div>
