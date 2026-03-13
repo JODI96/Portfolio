@@ -1,58 +1,377 @@
-import { useEffect, useState } from 'react';
 import './App.css';
 
-interface Forecast {
-    date: string;
-    temperatureC: number;
-    temperatureF: number;
-    summary: string;
+const projects = [
+  {
+    name: 'TraderXGBoost',
+    desc: 'BTC Breakout Detection System mit XGBoost (5-class softmax). Erkennt echte Breakouts vs. Fakeouts auf dem 1-Minuten-Chart mit 98 technischen Features, Walk-Forward-Validierung und Live Paper-Trading-Dashboard.',
+    language: 'Python',
+    tags: ['Machine Learning', 'XGBoost', 'Binance API', 'Trading'],
+    url: 'https://github.com/JODI96/TraderXGBoost',
+  },
+  {
+    name: 'Trader',
+    desc: 'Automatisierter Orderflow-Scalping-Bot für Binance Futures. Kombiniert Double DQN + LSTM Neural Network mit klassischen Indikatoren (VWAP, CVD, Order-Book) für Echtzeit-Handelssignale.',
+    language: 'Python',
+    tags: ['PyTorch', 'Reinforcement Learning', 'Binance Futures', 'WebSocket'],
+    url: 'https://github.com/JODI96/Trader',
+  },
+  {
+    name: 'ravecheller',
+    desc: 'Discord-Bot zur Verwaltung mehrerer Game-Server (Minecraft, Garry\'s Mod, Terraria, Factorio) via Chat-Befehle. Kein SSH nötig — Server starten, stoppen und updaten direkt aus Discord.',
+    language: 'Python',
+    tags: ['discord.py', 'Game Server', 'Automation', 'Linux'],
+    url: 'https://github.com/JODI96/ravecheller',
+  },
+  {
+    name: 'TKI',
+    desc: 'Pygame-basiertes Lernspiel für Programmiereinsteiger. Schüler lösen story-getriebene Levels durch praktisches Debuggen — TODO-Markierungen leiten durch den Code.',
+    language: 'Python',
+    tags: ['Pygame', 'Education', 'Game Dev'],
+    url: 'https://github.com/JODI96/TKI',
+  },
+  {
+    name: 'Portfolio',
+    desc: 'Diese Portfolio-Website — gebaut mit React (Vite) + ASP.NET Core. Single-Page-App mit dark theme, responsivem Layout und vollständiger Berufsprofil-Darstellung.',
+    language: 'TypeScript',
+    tags: ['React', 'ASP.NET Core', 'Vite', 'TypeScript'],
+    url: 'https://github.com/JODI96/Portfolio',
+  },
+];
+
+const langColors: Record<string, string> = {
+  JavaScript: 'lang-dot-js',
+  TypeScript: 'lang-dot-ts',
+  Vue: 'lang-dot-vue',
+  HTML: 'lang-dot-html',
+  'C#': 'lang-dot-cs',
+  Python: 'lang-dot-py',
+};
+
+function LangDot({ lang }: { lang: string }) {
+  const cls = langColors[lang] ?? 'lang-dot-default';
+  return <span className={`lang-dot ${cls}`} />;
 }
 
 function App() {
-    const [forecasts, setForecasts] = useState<Forecast[]>();
+  return (
+    <>
+      {/* ── NAV ─────────────────────────── */}
+      <nav>
+        <span className="nav-logo">JDG</span>
+        <ul className="nav-links">
+          <li><a href="#about">Über mich</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Erfahrung</a></li>
+          <li><a href="#education">Ausbildung</a></li>
+          <li><a href="#projects">Projekte</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
 
-    useEffect(() => {
-        populateWeatherData();
-    }, []);
-
-    const contents = forecasts === undefined
-        ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-        : <table className="table table-striped" aria-labelledby="tableLabel">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Temp. (C)</th>
-                    <th>Temp. (F)</th>
-                    <th>Summary</th>
-                </tr>
-            </thead>
-            <tbody>
-                {forecasts.map(forecast =>
-                    <tr key={forecast.date}>
-                        <td>{forecast.date}</td>
-                        <td>{forecast.temperatureC}</td>
-                        <td>{forecast.temperatureF}</td>
-                        <td>{forecast.summary}</td>
-                    </tr>
-                )}
-            </tbody>
-        </table>;
-
-    return (
-        <div>
-            <h1 id="tableLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server.</p>
-            {contents}
+      {/* ── HERO ────────────────────────── */}
+      <section id="hero">
+        <div className="container">
+          <div className="hero-inner">
+            <div className="hero-text">
+              <p className="hero-greeting">// Hallo, ich bin</p>
+              <h1 className="hero-name">Joys Di Giorgio</h1>
+              <p className="hero-title">.NET Software Engineer</p>
+              <p className="hero-location">
+                <span>📍</span> Uster, Zürich, Schweiz
+              </p>
+              <p className="hero-desc">
+                Ich entwickle robuste .NET-Applikationen und automatisiere Geschäftsprozesse.
+                Aktuell im Dualen Studium (B.Sc. Informatik an der OST) und als Junior Software Engineer
+                bei duagon tätig.
+              </p>
+              <div className="hero-actions">
+                <a href="#projects" className="btn-primary">Projekte ansehen</a>
+                <a href="#contact" className="btn-secondary">Kontakt aufnehmen</a>
+              </div>
+            </div>
+            <div className="hero-photo">
+              <div className="photo-placeholder">
+                <span className="photo-icon">👤</span>
+                <span>Foto folgt</span>
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      </section>
 
-    async function populateWeatherData() {
-        const response = await fetch('weatherforecast');
-        if (response.ok) {
-            const data = await response.json();
-            setForecasts(data);
-        }
-    }
+      {/* ── ABOUT ───────────────────────── */}
+      <section id="about">
+        <div className="container">
+          <h2 className="section-title">
+            <span className="section-number">01.</span> Über mich
+          </h2>
+          <div className="about-grid">
+            <div className="about-text">
+              <p>
+                Ich bin ein leidenschaftlicher .NET Software Engineer aus Uster (Zürich) mit einem
+                Hintergrund als Elektroniker EFZ. Diese technische Basis gibt mir ein tiefes Verständnis
+                für Hardware-nahe Systeme und industrielle Prozesse – ein Vorteil, der sich in meiner
+                täglichen Arbeit als Entwickler widerspiegelt.
+              </p>
+              <p>
+                Bei duagon entwickle ich .NET-basierte Tools zur Automatisierung von Produktions- und
+                Geschäftsprozessen, baue ETL-Pipelines und erweitere interne Projektmanagementsysteme.
+                Ein Highlight: ein Produktionsautomatisierungstool, das heute in der Schweiz und in den
+                USA eingesetzt wird.
+              </p>
+              <p>
+                Nebenbei studiere ich Computer Science an der OST – Ostschweizer Fachhochschule und
+                vertiefe stetig meine Kenntnisse in modernen Technologien.
+              </p>
+            </div>
+            <div className="about-stats">
+              <div className="stat-card">
+                <div className="stat-number">6+</div>
+                <div className="stat-label">Jahre Berufserfahrung (inkl. Lehre)</div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-number">2</div>
+                <div className="stat-label">Länder mit produktiven Deployments (🇨🇭 🇺🇸)</div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-number">B.Sc.</div>
+                <div className="stat-label">Computer Science, OST (laufend)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SKILLS ──────────────────────── */}
+      <section id="skills">
+        <div className="container">
+          <h2 className="section-title">
+            <span className="section-number">02.</span> Skills
+          </h2>
+          <div className="skills-grid">
+            <div className="skill-category">
+              <p className="skill-cat-title">Backend</p>
+              <div className="skill-tags">
+                {['C# / .NET', 'ASP.NET MVC', 'ETL Pipelines', 'REST APIs'].map(s => (
+                  <span key={s} className="skill-tag">{s}</span>
+                ))}
+              </div>
+            </div>
+            <div className="skill-category">
+              <p className="skill-cat-title">Datenbanken</p>
+              <div className="skill-tags">
+                {['SQL', 'MariaDB', 'Datenbankdesign'].map(s => (
+                  <span key={s} className="skill-tag">{s}</span>
+                ))}
+              </div>
+            </div>
+            <div className="skill-category">
+              <p className="skill-cat-title">Frontend</p>
+              <div className="skill-tags">
+                {['Vue.js', 'JavaScript', 'HTML / CSS', 'React'].map(s => (
+                  <span key={s} className="skill-tag">{s}</span>
+                ))}
+              </div>
+            </div>
+            <div className="skill-category">
+              <p className="skill-cat-title">Sprachen</p>
+              <div className="skill-tags">
+                <span className="skill-tag lang-tag">Deutsch (Muttersprache)</span>
+                <span className="skill-tag lang-tag">Englisch (Beruflich)</span>
+                <span className="skill-tag lang-tag">Italienisch (Grundkenntnisse)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── EXPERIENCE ──────────────────── */}
+      <section id="experience">
+        <div className="container">
+          <h2 className="section-title">
+            <span className="section-number">03.</span> Berufserfahrung
+          </h2>
+          <div className="timeline">
+
+            <div className="timeline-item">
+              <p className="timeline-company">duagon</p>
+              <p className="timeline-role">Junior Software Engineer</p>
+              <p className="timeline-period">September 2024 – heute</p>
+              <div className="timeline-desc">
+                <ul>
+                  <li>Entwicklung mehrerer .NET-Tools zur Automatisierung von Geschäfts- und Produktionsprozessen</li>
+                  <li>Aufbau einer .NET-basierten ETL-Pipeline zur Synchronisierung externer Produktdaten</li>
+                  <li>Erweiterung eines internen Projektmanagementsystems um externe Projekte und Hierarchien</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <p className="timeline-company">duagon</p>
+              <p className="timeline-role">Techniker</p>
+              <p className="timeline-period">August 2023 – heute</p>
+              <div className="timeline-desc">
+                <ul>
+                  <li>Entwicklung eines Produktionsautomatisierungstools für Device-Scanning und One-Click-Konfiguration</li>
+                  <li>Produktiver Einsatz in der Schweiz und in den USA</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <p className="timeline-company">Distretto di Dietikon</p>
+              <p className="timeline-role">Techniker / Entwickler</p>
+              <p className="timeline-period">Während duagon-Tätigkeit</p>
+              <div className="timeline-desc">
+                <ul>
+                  <li>Mitarbeit an spezifischen Kundenprojekten im Bereich Produktionsautomatisierung</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <p className="timeline-company">Dr. Marino Müller AG</p>
+              <p className="timeline-role">Service und Entwicklung</p>
+              <p className="timeline-period">August 2019 – Juli 2023 · 4 Jahre</p>
+              <div className="timeline-desc">
+                <ul>
+                  <li>Service und Weiterentwicklung technischer Systeme</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <p className="timeline-company">record Türautomation GmbH</p>
+              <p className="timeline-role">Lehrling – Elektroniker EFZ</p>
+              <p className="timeline-period">August 2014 – August 2018 · 4 Jahre</p>
+              <div className="timeline-desc">
+                <ul>
+                  <li>Abschluss der Berufslehre als Elektroniker EFZ im Bereich Türautomationssysteme</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── EDUCATION ───────────────────── */}
+      <section id="education">
+        <div className="container">
+          <h2 className="section-title">
+            <span className="section-number">04.</span> Ausbildung
+          </h2>
+          <div className="education-grid">
+
+            <div className="edu-card">
+              <span className="edu-icon">🎓</span>
+              <div>
+                <p className="edu-school">OST – Ostschweizer Fachhochschule</p>
+                <p className="edu-degree">Bachelor of Science, Computer Science</p>
+                <p className="edu-period">September 2022 – September 2027</p>
+              </div>
+            </div>
+
+            <div className="edu-card">
+              <span className="edu-icon">📚</span>
+              <div>
+                <p className="edu-school">Bildungszentrum Uster</p>
+                <p className="edu-degree">Weiterbildung</p>
+                <p className="edu-period">2018 – 2019</p>
+              </div>
+            </div>
+
+            <div className="edu-card">
+              <span className="edu-icon">⚡</span>
+              <div>
+                <p className="edu-school">Berufsbildungszentrum Uster</p>
+                <p className="edu-degree">Elektroniker EFZ</p>
+                <p className="edu-period">2014 – 2018</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── PROJECTS ────────────────────── */}
+      <section id="projects">
+        <div className="container">
+          <h2 className="section-title">
+            <span className="section-number">05.</span> GitHub Projekte
+          </h2>
+          <div className="projects-grid">
+            {projects.map(p => (
+              <a
+                key={p.name}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-card"
+              >
+                <div className="project-card-header">
+                  <span className="project-icon">📁</span>
+                  <span className="project-link-icon">↗</span>
+                </div>
+                <p className="project-name">{p.name}</p>
+                <p className="project-desc">{p.desc}</p>
+                <div className="project-tags">
+                  {p.tags.map(t => (
+                    <span key={t} className="project-tag">{t}</span>
+                  ))}
+                </div>
+                <div className="project-footer">
+                  <LangDot lang={p.language} />
+                  <span className="lang-label">{p.language}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CONTACT ─────────────────────── */}
+      <section id="contact">
+        <div className="container">
+          <h2 className="section-title">
+            <span className="section-number">06.</span> Kontakt
+          </h2>
+          <div className="contact-card">
+            <p>
+              Ich bin offen für spannende Projekte, Kollaborationen oder einfach einen fachlichen
+              Austausch. Schreib mir gerne eine E-Mail oder verbinde dich auf LinkedIn!
+            </p>
+            <div className="contact-links">
+              <a href="mailto:joys96@gmail.com" className="contact-link">
+                <span>✉️</span> joys96@gmail.com
+              </a>
+              <a
+                href="https://www.linkedin.com/in/joys-di-giorgio-14698b186"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-link"
+              >
+                <span>💼</span> LinkedIn
+              </a>
+              <a
+                href="https://github.com/joys96"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-link"
+              >
+                <span>🐙</span> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOOTER ──────────────────────── */}
+      <footer>
+        <p>© {new Date().getFullYear()} Joys Di Giorgio · Built with React + ASP.NET Core</p>
+      </footer>
+    </>
+  );
 }
 
 export default App;
