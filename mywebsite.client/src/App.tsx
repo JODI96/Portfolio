@@ -249,17 +249,6 @@ function App() {
             </div>
 
             <div className="timeline-item">
-              <p className="timeline-company">Distretto di Dietikon</p>
-              <p className="timeline-role">Techniker / Entwickler</p>
-              <p className="timeline-period">Während duagon-Tätigkeit</p>
-              <div className="timeline-desc">
-                <ul>
-                  <li>Mitarbeit an spezifischen Kundenprojekten im Bereich Produktionsautomatisierung</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="timeline-item">
               <p className="timeline-company">Dr. Marino Müller AG</p>
               <p className="timeline-role">Service und Entwicklung</p>
               <p className="timeline-period">August 2019 – Juli 2023 · 4 Jahre</p>
@@ -386,7 +375,7 @@ function App() {
                 <span>💼</span> LinkedIn
               </a>
               <a
-                href="https://github.com/joys96"
+                href="https://github.com/JODI96"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-link"
