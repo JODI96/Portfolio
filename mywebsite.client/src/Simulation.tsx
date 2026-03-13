@@ -131,13 +131,13 @@ export default function Simulation() {
         <div className="sim-intro">
           <p>
             Der XGBoost Breakout-Detektor simuliert Trades auf historischen BTCUSDT 1-Minuten-Candles
-            aus 2025. Die Replay-Simulation läuft bar-by-bar durch die Daten — Equity-Kurve und alle
+            aus Januar 2026. Die Replay-Simulation läuft bar-by-bar durch die Daten — Equity-Kurve und alle
             Trades werden direkt hier angezeigt.
           </p>
           <div className="sim-badges">
             <span className="sim-badge sim-badge--model">XGBoost</span>
             <span className="sim-badge sim-badge--data">BTCUSDT 1m</span>
-            <span className="sim-badge sim-badge--live">BTC 2025 Replay</span>
+            <span className="sim-badge sim-badge--live">BTC Jan 2026 Replay</span>
           </div>
         </div>
 
