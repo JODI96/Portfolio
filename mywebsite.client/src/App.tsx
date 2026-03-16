@@ -105,9 +105,7 @@ function App() {
       {/* ── ABOUT ───────────────────────── */}
       <section id="about">
         <div className="container">
-          <h2 className="section-title">
-            <span className="section-number">01.</span> Über mich
-          </h2>
+          <h2 className="section-title">Über mich</h2>
           <div className="about-grid">
             <div className="about-text">
               <p>
@@ -164,9 +162,7 @@ function App() {
       {/* ── SKILLS ──────────────────────── */}
       <section id="skills">
         <div className="container">
-          <h2 className="section-title">
-            <span className="section-number">02.</span> Skills
-          </h2>
+          <h2 className="section-title">Skills</h2>
           <div className="skills-grid">
             <div className="skill-category">
               <p className="skill-cat-title">Backend</p>
@@ -218,9 +214,7 @@ function App() {
       {/* ── EXPERIENCE ──────────────────── */}
       <section id="experience">
         <div className="container">
-          <h2 className="section-title">
-            <span className="section-number">03.</span> Berufserfahrung
-          </h2>
+          <h2 className="section-title">Berufserfahrung</h2>
           <div className="timeline">
 
             <div className="timeline-item">
@@ -278,9 +272,7 @@ function App() {
       {/* ── EDUCATION ───────────────────── */}
       <section id="education">
         <div className="container">
-          <h2 className="section-title">
-            <span className="section-number">04.</span> Ausbildung
-          </h2>
+          <h2 className="section-title">Ausbildung</h2>
           <div className="education-grid">
 
             <div className="edu-card">
@@ -317,9 +309,7 @@ function App() {
       {/* ── PROJECTS ────────────────────── */}
       <section id="projects">
         <div className="container">
-          <h2 className="section-title">
-            <span className="section-number">05.</span> GitHub Projekte
-          </h2>
+          <h2 className="section-title">GitHub Projekte</h2>
           <div className="projects-grid">
             {projects.map(p => (
               <a
@@ -355,9 +345,7 @@ function App() {
       {/* ── CONTACT ─────────────────────── */}
       <section id="contact">
         <div className="container">
-          <h2 className="section-title">
-            <span className="section-number">08.</span> Kontakt
-          </h2>
+          <h2 className="section-title">Kontakt</h2>
           <div className="contact-card">
             <p>
               Ich bin offen für spannende Projekte, Kollaborationen oder einfach einen fachlichen
