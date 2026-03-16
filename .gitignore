@@ -33,6 +33,11 @@ TestResults/
 *.db
 
 # =========================
+# CV (LinkedIn PDF privat)
+# =========================
+cv/Linkedin.pdf
+
+# =========================
 # Claude Code
 # =========================
 .claude/
