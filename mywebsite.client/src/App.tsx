@@ -86,7 +86,7 @@ function App() {
               <li><a href="#projekte">Projekte</a></li>
               <li><a href="#kontakt">Kontakt</a></li>
             </ul>
-            <a href="#kontakt" className="btn btn-gold nav-cta">Projekt anfragen</a>
+            <a href="#kontakt" className="btn btn-gold nav-cta">Entwurf anfragen</a>
             <button
               className="nav-toggle"
               aria-label="Menü"
