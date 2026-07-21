@@ -141,7 +141,6 @@ function App() {
             <div className="medallion rise">
               <div className="ring">
                 <img src="/foto.jpg" alt="Joys Di Giorgio" />
-                <span className="cap">Joys Di Giorgio</span>
               </div>
             </div>
           </div>
