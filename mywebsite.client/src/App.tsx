@@ -25,7 +25,7 @@ const services = [
 
 const steps = [
   { num: '01', title: 'Erstgespräch', desc: 'Wir klären Ziele, Umfang und Budget in einem unverbindlichen Gespräch.' },
-  { num: '02', title: 'Konzept und Angebot', desc: 'Sie erhalten ein klares Konzept mit Zeitplan und transparentem Festpreis.' },
+  { num: '02', title: 'Konzept und Entwurf', desc: 'Sie erhalten ein Konzept, einen transparenten Festpreis und einen ersten kostenlosen Entwurf.' },
   { num: '03', title: 'Umsetzung', desc: 'Entwicklung in engem Austausch, mit regelmässigen Zwischenständen.' },
   { num: '04', title: 'Launch und Betrieb', desc: 'Sauberer Go-live, saubere Übergabe und auf Wunsch die Betreuung danach.' },
 ];
@@ -59,6 +59,13 @@ const projects = [
 
 const stack = ['React', 'TypeScript', '.NET / C#', 'Node.js', 'SQL / MariaDB', 'Vite', 'REST APIs', 'Python'];
 
+const principles = [
+  { title: 'Transparenter Festpreis', desc: 'Kein Stundenrisiko. Sie wissen von Anfang an, was Ihr Projekt kostet.' },
+  { title: 'Direkte Zusammenarbeit', desc: 'Sie sprechen immer direkt mit mir, ohne Umwege über Dritte.' },
+  { title: 'Sauber und wartbar', desc: 'Moderner, dokumentierter Code, den auch später noch jemand versteht.' },
+  { title: 'Verlässliche Termine', desc: 'Klare Zeitpläne und ehrliche Kommunikation, wenn sich etwas ändert.' },
+];
+
 function App() {
   return (
     <>
@@ -69,6 +76,7 @@ function App() {
           <div className="wrap nav-in">
             <a href="#hero" className="brand">Joys Di Giorgio<span>.</span></a>
             <ul className="nav-links">
+              <li><a href="#angebot">Angebot</a></li>
               <li><a href="#leistungen">Leistungen</a></li>
               <li><a href="#ablauf">Ablauf</a></li>
               <li><a href="#projekte">Projekte</a></li>
@@ -86,12 +94,12 @@ function App() {
                 Websites und Software, die Ihr Unternehmen <span className="gold-it">weiterbringen</span>.
               </h1>
               <p className="lead">
-                Ich bin Joys Di Giorgio, freischaffender Software Engineer aus dem Raum Zürich.
+                Ich bin Joys Di Giorgio, selbständiger Software Engineer aus dem Raum Zürich.
                 Ich entwickle professionelle Websites, Web-Apps und Automatisierungen, von der
                 ersten Idee bis zum laufenden Betrieb.
               </p>
               <div className="hero-actions">
-                <a href="#kontakt" className="btn btn-gold">Projekt anfragen</a>
+                <a href="#kontakt" className="btn btn-gold">Kostenlosen Entwurf anfragen</a>
                 <a href="#leistungen" className="btn btn-ghost">Leistungen ansehen</a>
               </div>
               <div className="hero-meta">
@@ -102,12 +110,27 @@ function App() {
             </div>
             <div className="medallion rise">
               <div className="ring">
-                <span className="mono">JDG</span>
-                <span className="cap">Software Engineer</span>
+                <img src="/foto.jpg" alt="Joys Di Giorgio" />
+                <span className="cap">Joys Di Giorgio</span>
               </div>
             </div>
           </div>
         </header>
+
+        <section id="angebot" className="offer">
+          <div className="wrap">
+            <div className="offer-panel">
+              <span className="eyebrow">Kostenloser Entwurf</span>
+              <h2 className="display">Sie sehen Ihr Produkt, bevor Sie sich entscheiden.</h2>
+              <p>
+                Nach einem kurzen Gespräch baue ich Ihnen einen ersten, fertigen Entwurf,
+                zugeschnitten auf Ihre Bedürfnisse. Vollständig kostenlos und unverbindlich.
+                So wissen Sie genau, was Sie bekommen, bevor Sie sich festlegen.
+              </p>
+              <a href="#kontakt" className="btn btn-gold">Kostenlosen Entwurf anfragen</a>
+            </div>
+          </div>
+        </section>
 
         <section id="leistungen">
           <div className="wrap">
@@ -125,6 +148,23 @@ function App() {
                     {s.points.map(p => <li key={p}>{p}</li>)}
                   </ul>
                 </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="grundsaetze" className="principles-section">
+          <div className="wrap">
+            <div className="head">
+              <span className="eyebrow">Grundsätze</span>
+              <h2 className="display">Warum die Zusammenarbeit funktioniert.</h2>
+            </div>
+            <div className="principles">
+              {principles.map(p => (
+                <div key={p.title} className="principle">
+                  <h3>{p.title}</h3>
+                  <p>{p.desc}</p>
+                </div>
               ))}
             </div>
           </div>
