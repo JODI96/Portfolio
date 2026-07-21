@@ -83,8 +83,7 @@ function App() {
               </p>
               <p className="hero-desc">
                 Ich entwickle robuste .NET-Applikationen und automatisiere Geschäftsprozesse.
-                Aktuell im Dualen Studium (B.Sc. Informatik an der OST) und als Junior Software Engineer
-                bei duagon tätig.
+                Aktuell als Software Engineer bei duagon tätig.
               </p>
               <div className="hero-actions">
                 <a href="#projects" className="btn-primary">Projekte ansehen</a>
@@ -121,8 +120,7 @@ function App() {
                 USA eingesetzt wird.
               </p>
               <p>
-                Nebenbei studiere ich Computer Science an der Ostschweizer Fachhochschule (OST) und
-                vertiefe stetig meine Kenntnisse in modernen Technologien.
+                Nebenbei vertiefe ich stetig meine Kenntnisse in modernen Technologien.
               </p>
               <p>
                 Privat beschäftige ich mich intensiv mit <strong>Machine Learning</strong>,{' '}
@@ -151,8 +149,8 @@ function App() {
                 <div className="stat-label">Länder mit produktiven Deployments (🇨🇭 🇺🇸)</div>
               </div>
               <div className="stat-card">
-                <div className="stat-number">B.Sc.</div>
-                <div className="stat-label">Computer Science, OST (laufend)</div>
+                <div className="stat-number">4+</div>
+                <div className="stat-label">eigene Projekte in ML und Automation</div>
               </div>
             </div>
           </div>
