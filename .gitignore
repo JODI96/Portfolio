@@ -33,9 +33,9 @@ TestResults/
 *.db
 
 # =========================
-# CV (LinkedIn PDF privat)
+# CV (privat, nicht tracken)
 # =========================
-cv/Linkedin.pdf
+cv/
 
 # =========================
 # Claude Code
