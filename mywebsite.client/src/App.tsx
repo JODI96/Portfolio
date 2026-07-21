@@ -42,6 +42,12 @@ const clientProjects = [
 
 const privateProjects = [
   {
+    name: 'CampusPlay',
+    desc: 'Full-Stack-Buchungsplattform für Sportplätze mit integrierter Zahlungsabwicklung. React-Frontend, .NET-Backend mit PostgreSQL, sicheres Login und PayPal-Anbindung.',
+    tags: ['React', '.NET', 'PostgreSQL', 'PayPal'],
+    url: 'https://github.com/JODI96/CampusPlay',
+  },
+  {
     name: 'XGBoost Pattern Classifier',
     desc: 'Machine-Learning-System zur Mustererkennung in hochfrequenten Zeitreihen mit 98 selbst berechneten Features und Vorhersagen in Echtzeit.',
     tags: ['Machine Learning', 'XGBoost', 'Python'],
@@ -52,12 +58,6 @@ const privateProjects = [
     desc: 'Deep-Learning-System, das Echtzeit-Datenströme über WebSocket verarbeitet und ein Double DQN mit einem LSTM-Netzwerk kombiniert.',
     tags: ['PyTorch', 'Reinforcement Learning', 'WebSocket'],
     url: 'https://github.com/JODI96/Trader',
-  },
-  {
-    name: 'ravecheller',
-    desc: 'Discord-Bot zur Verwaltung mehrerer Game-Server über Chat-Befehle. Starten, stoppen und updaten direkt aus Discord, ganz ohne SSH.',
-    tags: ['Automation', 'discord.py', 'Linux'],
-    url: 'https://github.com/JODI96/ravecheller',
   },
   {
     name: 'TKI',
