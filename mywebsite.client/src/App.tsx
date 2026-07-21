@@ -3,14 +3,14 @@ import Simulation from './Simulation';
 
 const projects = [
   {
-    name: 'TraderXGBoost',
+    name: 'XGBoost Pattern Classifier',
     desc: 'Machine-Learning-System zur Mustererkennung in hochfrequenten Zeitreihen. Ein XGBoost-Klassifikator mit 5-Klassen-Softmax wertet 98 selbst berechnete Features auf Minutendaten aus. Dazu kommt eine saubere Walk-Forward-Validierung und ein Dashboard, das die Vorhersagen des Modells in Echtzeit anzeigt.',
     language: 'Python',
     tags: ['Machine Learning', 'XGBoost', 'Feature Engineering', 'Zeitreihen'],
     url: 'https://github.com/JODI96/TraderXGBoost',
   },
   {
-    name: 'Trader',
+    name: 'OrderFlow RL Agent',
     desc: 'Deep-Learning-System, das Echtzeit-Datenströme über WebSocket verarbeitet. Es kombiniert ein Double DQN mit einem LSTM-Netzwerk und wertet berechnete Kennzahlen wie VWAP, CVD und Order-Book-Daten aus. Im Vordergrund stehen die Architektur des Reinforcement-Learning-Agenten und die Verarbeitung grosser Datenmengen in Echtzeit.',
     language: 'Python',
     tags: ['PyTorch', 'Reinforcement Learning', 'Echtzeitdaten', 'WebSocket'],
