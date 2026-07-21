@@ -26,7 +26,7 @@ const services = [
 
 const steps = [
   { num: '01', title: 'Erstgespräch', desc: 'Wir klären Ziele, Umfang und Budget in einem unverbindlichen Gespräch.' },
-  { num: '02', title: 'Konzept und Entwurf', desc: 'Sie erhalten Konzept, Festpreis und einen ersten Entwurf. Bis hierhin ist alles kostenlos und unverbindlich.' },
+  { num: '02', title: 'Konzept und Entwurf', desc: 'Sie erhalten Konzept, Festpreis und einen ersten Entwurf. Bis hierhin ist alles kostenlos.' },
   { num: '03', title: 'Umsetzung', desc: 'Entwicklung in engem Austausch, mit regelmässigen Zwischenständen.' },
   { num: '04', title: 'Launch und Betrieb', desc: 'Sauberer Go-live, saubere Übergabe und auf Wunsch die Betreuung danach.' },
 ];
