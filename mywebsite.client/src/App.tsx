@@ -4,35 +4,35 @@ import Simulation from './Simulation';
 const projects = [
   {
     name: 'TraderXGBoost',
-    desc: 'BTC Breakout Detection System mit XGBoost (5-class softmax). Erkennt echte Breakouts vs. Fakeouts auf dem 1-Minuten-Chart mit 98 technischen Features, Walk-Forward-Validierung und Live Paper-Trading-Dashboard.',
+    desc: 'Machine-Learning-System zur Mustererkennung in hochfrequenten Zeitreihen. Ein XGBoost-Klassifikator mit 5-Klassen-Softmax wertet 98 selbst berechnete Features auf Minutendaten aus. Dazu kommt eine saubere Walk-Forward-Validierung und ein Dashboard, das die Vorhersagen des Modells in Echtzeit anzeigt.',
     language: 'Python',
-    tags: ['Machine Learning', 'XGBoost', 'Binance API', 'Trading'],
+    tags: ['Machine Learning', 'XGBoost', 'Feature Engineering', 'Zeitreihen'],
     url: 'https://github.com/JODI96/TraderXGBoost',
   },
   {
     name: 'Trader',
-    desc: 'Automatisierter Orderflow-Scalping-Bot für Binance Futures. Kombiniert Double DQN + LSTM Neural Network mit klassischen Indikatoren (VWAP, CVD, Order-Book) für Echtzeit-Handelssignale.',
+    desc: 'Deep-Learning-System, das Echtzeit-Datenströme über WebSocket verarbeitet. Es kombiniert ein Double DQN mit einem LSTM-Netzwerk und wertet berechnete Kennzahlen wie VWAP, CVD und Order-Book-Daten aus. Im Vordergrund stehen die Architektur des Reinforcement-Learning-Agenten und die Verarbeitung grosser Datenmengen in Echtzeit.',
     language: 'Python',
-    tags: ['PyTorch', 'Reinforcement Learning', 'Binance Futures', 'WebSocket'],
+    tags: ['PyTorch', 'Reinforcement Learning', 'Echtzeitdaten', 'WebSocket'],
     url: 'https://github.com/JODI96/Trader',
   },
   {
     name: 'ravecheller',
-    desc: 'Discord-Bot zur Verwaltung mehrerer Game-Server (Minecraft, Garry\'s Mod, Terraria, Factorio) via Chat-Befehle. Kein SSH nötig — Server starten, stoppen und updaten direkt aus Discord.',
+    desc: 'Discord-Bot zur Verwaltung mehrerer Game-Server (Minecraft, Garry\'s Mod, Terraria, Factorio) via Chat-Befehle. Kein SSH nötig, man startet, stoppt und updatet die Server direkt aus Discord.',
     language: 'Python',
     tags: ['discord.py', 'Game Server', 'Automation', 'Linux'],
     url: 'https://github.com/JODI96/ravecheller',
   },
   {
     name: 'TKI',
-    desc: 'Pygame-basiertes Lernspiel für Programmiereinsteiger. Schüler lösen story-getriebene Levels durch praktisches Debuggen — TODO-Markierungen leiten durch den Code.',
+    desc: 'Pygame-basiertes Lernspiel für Programmiereinsteiger. Schüler lösen story-getriebene Levels durch praktisches Debuggen, TODO-Markierungen leiten durch den Code.',
     language: 'Python',
     tags: ['Pygame', 'Education', 'Game Dev'],
     url: 'https://github.com/JODI96/TKI',
   },
   {
     name: 'Portfolio',
-    desc: 'Diese Portfolio-Website — gebaut mit React (Vite) + ASP.NET Core. Single-Page-App mit dark theme, responsivem Layout und vollständiger Berufsprofil-Darstellung.',
+    desc: 'Diese Portfolio-Website, gebaut mit React (Vite) und ASP.NET Core. Single-Page-App mit dark theme, responsivem Layout und vollständiger Berufsprofil-Darstellung.',
     language: 'TypeScript',
     tags: ['React', 'ASP.NET Core', 'Vite', 'TypeScript'],
     url: 'https://github.com/JODI96/Portfolio',
@@ -111,8 +111,8 @@ function App() {
               <p>
                 Ich bin ein leidenschaftlicher .NET Software Engineer aus Uster (Zürich) mit einem
                 Hintergrund als Elektroniker EFZ. Diese technische Basis gibt mir ein tiefes Verständnis
-                für Hardware-nahe Systeme und industrielle Prozesse – ein Vorteil, der sich in meiner
-                täglichen Arbeit als Entwickler widerspiegelt.
+                für Hardware-nahe Systeme und industrielle Prozesse. Das hilft mir jeden Tag
+                in meiner Arbeit als Entwickler.
               </p>
               <p>
                 Bei duagon entwickle ich .NET-basierte Tools zur Automatisierung von Produktions- und
@@ -121,16 +121,16 @@ function App() {
                 USA eingesetzt wird.
               </p>
               <p>
-                Nebenbei studiere ich Computer Science an der OST – Ostschweizer Fachhochschule und
+                Nebenbei studiere ich Computer Science an der Ostschweizer Fachhochschule (OST) und
                 vertiefe stetig meine Kenntnisse in modernen Technologien.
               </p>
               <p>
                 Privat beschäftige ich mich intensiv mit <strong>Machine Learning</strong>,{' '}
-                <strong>Datenanalyse</strong> und <strong>Datenvisualisierung</strong>. Konkret habe
-                ich eigenständig Trading-Systeme entwickelt, die Marktdaten in Echtzeit verarbeiten,
-                mit XGBoost und Deep Reinforcement Learning (DQN + LSTM) trainierte Modelle einsetzen
-                und Ergebnisse in interaktiven Dashboards darstellen. Diese Projekte treiben mich an,
-                weil sie Daten, Statistik und Softwareentwicklung in einem vereinen.
+                <strong>Datenanalyse</strong> und <strong>Datenvisualisierung</strong>. Ich baue
+                eigenständig Systeme, die grosse Mengen an Marktdaten in Echtzeit verarbeiten. Dabei
+                trainiere ich Modelle mit XGBoost und Deep Reinforcement Learning (DQN und LSTM) und
+                stelle die Ergebnisse in interaktiven Dashboards dar. Was mich daran reizt, ist die
+                Verbindung von Datenverarbeitung, Statistik und sauberer Softwarearchitektur.
               </p>
               <div className="about-interests">
                 <span className="interest-tag">Machine Learning</span>

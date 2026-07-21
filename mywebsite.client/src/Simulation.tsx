@@ -16,22 +16,23 @@ export default function Simulation() {
 
         <div className="sim-intro">
           <p>
-            Der XGBoost Breakout-Detektor simuliert Trades auf historischen BTCUSDT 1-Minuten-Candles
-            aus Januar 2026. Die Replay-Simulation läuft bar-by-bar durch die Daten — Equity-Kurve und alle
-            Trades werden direkt hier angezeigt.
+            Das XGBoost-Modell läuft hier über einen historischen BTCUSDT Minutendatensatz aus dem
+            Januar 2026 und klassifiziert jede Kerze einzeln. Die Simulation spielt den Datensatz
+            Schritt für Schritt durch und visualisiert die Vorhersagen des Modells und deren Verlauf
+            direkt im Browser.
           </p>
           <div className="sim-badges">
             <span className="sim-badge sim-badge--model">XGBoost</span>
             <span className="sim-badge sim-badge--data">BTCUSDT 1m</span>
-            <span className="sim-badge sim-badge--live">BTC Jan 2026 Replay</span>
+            <span className="sim-badge sim-badge--live">Echtzeit-Inferenz</span>
           </div>
         </div>
 
         <div className="sim-card">
           <div className="sim-idle">
             <div className="sim-idle-icon">📈</div>
-            <p>Klick auf Run — die Simulation öffnet sich in einem neuen Fenster und startet automatisch.</p>
-            <p className="sim-idle-sub">Beim ersten Start kann es ~30 Sekunden dauern bis der Server aufgewacht ist.</p>
+            <p>Klick auf Run und die Simulation öffnet sich in einem neuen Fenster und startet automatisch.</p>
+            <p className="sim-idle-sub">Beim ersten Start kann es rund 30 Sekunden dauern, bis der Server aufgewacht ist.</p>
             <button className="sim-btn" onClick={runSimulation}>
               Run Simulation ↗
             </button>
