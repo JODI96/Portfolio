@@ -26,12 +26,21 @@ const services = [
 
 const steps = [
   { num: '01', title: 'Erstgespräch', desc: 'Wir klären Ziele, Umfang und Budget in einem unverbindlichen Gespräch.' },
-  { num: '02', title: 'Konzept und Entwurf', desc: 'Sie erhalten ein Konzept, einen transparenten Festpreis und einen ersten kostenlosen Entwurf.' },
+  { num: '02', title: 'Konzept und Entwurf', desc: 'Sie erhalten Konzept, Festpreis und einen ersten Entwurf. Bis hierhin ist alles kostenlos und unverbindlich.' },
   { num: '03', title: 'Umsetzung', desc: 'Entwicklung in engem Austausch, mit regelmässigen Zwischenständen.' },
   { num: '04', title: 'Launch und Betrieb', desc: 'Sauberer Go-live, saubere Übergabe und auf Wunsch die Betreuung danach.' },
 ];
 
-const projects = [
+const clientProjects = [
+  {
+    name: 'Shailana Beauty',
+    desc: 'Moderne Website für ein Kosmetikstudio mit Fokus auf Wimpern und Brauen. Klare Präsentation der Behandlungen, der beiden Standorte und eine einfache Terminanfrage.',
+    tags: ['Webdesign', 'Business Website', 'Responsive'],
+    url: 'https://shailanabeauty.ch/',
+  },
+];
+
+const privateProjects = [
   {
     name: 'XGBoost Pattern Classifier',
     desc: 'Machine-Learning-System zur Mustererkennung in hochfrequenten Zeitreihen mit 98 selbst berechneten Features und Vorhersagen in Echtzeit.',
@@ -70,6 +79,7 @@ const principles = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
+  const [projectTab, setProjectTab] = useState('kunden');
 
   return (
     <>
@@ -214,10 +224,28 @@ function App() {
             <div className="head">
               <span className="eyebrow">Projekte</span>
               <h2 className="display">Ausgewählte Arbeiten.</h2>
-              <p>Eine Auswahl technischer Projekte, die zeigen, wie ich komplexe Probleme sauber löse.</p>
+              <p>Von Kundenprojekten bis zu eigenen technischen Experimenten.</p>
+            </div>
+            <div className="tabs" role="tablist">
+              <button
+                role="tab"
+                aria-selected={projectTab === 'kunden'}
+                className={projectTab === 'kunden' ? 'tab active' : 'tab'}
+                onClick={() => setProjectTab('kunden')}
+              >
+                Kundenprojekte
+              </button>
+              <button
+                role="tab"
+                aria-selected={projectTab === 'privat'}
+                className={projectTab === 'privat' ? 'tab active' : 'tab'}
+                onClick={() => setProjectTab('privat')}
+              >
+                Private Projekte
+              </button>
             </div>
             <div className="projects">
-              {projects.map(p => (
+              {(projectTab === 'kunden' ? clientProjects : privateProjects).map(p => (
                 <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="proj">
                   <div className="proj-top">
                     <h3>{p.name}</h3>

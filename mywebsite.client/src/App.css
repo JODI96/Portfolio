@@ -217,6 +217,17 @@ nav {
 .step p { margin-top: 0.7rem; color: var(--muted); font-size: 0.9rem; }
 
 /* projects */
+.tabs { display: flex; gap: 0.4rem; margin-bottom: 2.4rem; border-bottom: 1px solid var(--line-soft); }
+.tab {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--mono); font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); padding: 0.9rem 1.1rem; position: relative; transition: color .2s;
+}
+.tab:hover { color: var(--ivory); }
+.tab.active { color: var(--gold); }
+.tab.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--gold); }
+#projekte .head { margin-bottom: 2.6rem; }
+
 .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
 .proj {
   display: block; padding: 2.2rem; background: var(--surface);
