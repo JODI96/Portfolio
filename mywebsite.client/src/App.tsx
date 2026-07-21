@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 
 const services = [
@@ -67,6 +68,9 @@ const principles = [
 ];
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <>
       <div className="atmos" aria-hidden="true" />
@@ -74,7 +78,7 @@ function App() {
 
         <nav>
           <div className="wrap nav-in">
-            <a href="#hero" className="brand">Joys Di Giorgio<span>.</span></a>
+            <a href="#hero" className="brand" onClick={closeMenu}>Joys Di Giorgio<span>.</span></a>
             <ul className="nav-links">
               <li><a href="#angebot">Angebot</a></li>
               <li><a href="#leistungen">Leistungen</a></li>
@@ -83,6 +87,22 @@ function App() {
               <li><a href="#kontakt">Kontakt</a></li>
             </ul>
             <a href="#kontakt" className="btn btn-gold nav-cta">Projekt anfragen</a>
+            <button
+              className="nav-toggle"
+              aria-label="Menü"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen(o => !o)}
+            >
+              <span /><span /><span />
+            </button>
+          </div>
+          <div className={menuOpen ? 'mobile-menu open' : 'mobile-menu'}>
+            <a href="#angebot" onClick={closeMenu}>Angebot</a>
+            <a href="#leistungen" onClick={closeMenu}>Leistungen</a>
+            <a href="#ablauf" onClick={closeMenu}>Ablauf</a>
+            <a href="#projekte" onClick={closeMenu}>Projekte</a>
+            <a href="#kontakt" onClick={closeMenu}>Kontakt</a>
+            <a href="#kontakt" className="btn btn-gold" onClick={closeMenu}>Kostenlosen Entwurf anfragen</a>
           </div>
         </nav>
 

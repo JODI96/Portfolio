@@ -99,6 +99,33 @@ nav {
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 .nav-cta { padding: 0.55rem 1.2rem; font-size: 0.82rem; }
 
+/* mobile nav */
+.nav-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  padding: 8px; margin: -8px -4px -8px 0; background: none; border: none; cursor: pointer;
+}
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ivory); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  position: absolute; top: 100%; left: 0; right: 0;
+  display: none; flex-direction: column;
+  padding: 0.25rem var(--pad) 2rem;
+  background: rgba(10, 15, 12, 0.97); backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line-soft);
+  opacity: 0; transform: translateY(-10px); pointer-events: none;
+  transition: opacity .28s ease, transform .28s ease;
+}
+.mobile-menu.open { opacity: 1; transform: none; pointer-events: auto; }
+.mobile-menu a:not(.btn) {
+  padding: 1rem 0; font-size: 1.15rem; font-family: var(--serif); color: var(--ivory);
+  border-bottom: 1px solid var(--line-soft);
+}
+.mobile-menu a:not(.btn):active { color: var(--gold); }
+.mobile-menu .btn { margin-top: 1.4rem; width: 100%; }
+
 /* hero */
 .hero { padding: 13rem 0 8rem; border: none; }
 .hero-grid { display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 4.5rem; align-items: center; }
@@ -238,13 +265,25 @@ footer { border-top: 1px solid var(--line-soft); padding: 2.6rem 0; }
   .medallion .ring { width: 190px; height: 240px; }
   .services, .projects { grid-template-columns: 1fr; }
   .steps, .principles { grid-template-columns: repeat(2, 1fr); }
-  .nav-links { display: none; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .mobile-menu { display: flex; }
+  section { padding: 7rem 0; }
+  .hero { padding: 11rem 0 6rem; }
 }
 @media (max-width: 540px) {
   :root { --pad: 1.25rem; }
-  section { padding: 6rem 0; }
-  .hero { padding: 10rem 0 5rem; }
+  section { padding: 5.5rem 0; }
+  .hero { padding: 9.5rem 0 4.5rem; }
+  .hero h1 { font-size: clamp(2.2rem, 8.5vw, 3rem); }
   .steps, .principles { grid-template-columns: 1fr; }
-  .nav-cta { display: none; }
   .offer-panel { padding: 3rem 1.5rem; }
+  .head { margin-bottom: 3rem; }
+  .card { padding: 2rem 1.6rem; }
+  .proj { padding: 1.8rem 1.6rem; }
+  .contact h2 { max-width: 100%; }
+  .methods { gap: 1.4rem 1.8rem; }
+  .btn { white-space: normal; text-align: center; }
+  .hero-actions { width: 100%; }
+  .hero-actions .btn { flex: 1 1 100%; }
 }
