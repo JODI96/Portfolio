@@ -94,7 +94,7 @@ function App() {
                 Websites und Software, die Ihr Unternehmen <span className="gold-it">weiterbringen</span>.
               </h1>
               <p className="lead">
-                Ich bin Joys Di Giorgio, selbständiger Software Engineer aus dem Raum Zürich.
+                Ich bin Joys Di Giorgio, Software Engineer aus dem Raum Zürich.
                 Ich entwickle professionelle Websites, Web-Apps und Automatisierungen, von der
                 ersten Idee bis zum laufenden Betrieb.
               </p>
