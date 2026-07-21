@@ -93,7 +93,7 @@ function App() {
               <li><a href="#angebot">Angebot</a></li>
               <li><a href="#leistungen">Leistungen</a></li>
               <li><a href="#ablauf">Ablauf</a></li>
-              <li><a href="#projekte">Projekte</a></li>
+              <li><a href="#projekte">Meine Arbeiten</a></li>
               <li><a href="#kontakt">Kontakt</a></li>
             </ul>
             <a href="#kontakt" className="btn btn-gold nav-cta">Entwurf anfragen</a>
@@ -110,7 +110,7 @@ function App() {
             <a href="#angebot" onClick={closeMenu}>Angebot</a>
             <a href="#leistungen" onClick={closeMenu}>Leistungen</a>
             <a href="#ablauf" onClick={closeMenu}>Ablauf</a>
-            <a href="#projekte" onClick={closeMenu}>Projekte</a>
+            <a href="#projekte" onClick={closeMenu}>Meine Arbeiten</a>
             <a href="#kontakt" onClick={closeMenu}>Kontakt</a>
             <a href="#kontakt" className="btn btn-gold" onClick={closeMenu}>Kostenlosen Entwurf anfragen</a>
           </div>
@@ -222,8 +222,8 @@ function App() {
         <section id="projekte">
           <div className="wrap">
             <div className="head">
-              <span className="eyebrow">Projekte</span>
-              <h2 className="display">Ausgewählte Arbeiten.</h2>
+              <span className="eyebrow">Meine Arbeiten</span>
+              <h2 className="display">Was ich gebaut habe.</h2>
               <p>Von Kundenprojekten bis zu eigenen technischen Experimenten.</p>
             </div>
             <div className="tabs" role="tablist">
