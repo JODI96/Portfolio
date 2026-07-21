@@ -278,7 +278,7 @@ function App() {
               <div>
                 <p className="edu-school">OST – Ostschweizer Fachhochschule</p>
                 <p className="edu-degree">Bachelor of Science, Computer Science</p>
-                <p className="edu-period">September 2022 – September 2027</p>
+                <p className="edu-period">September 2022 – September 2028</p>
               </div>
             </div>
 
